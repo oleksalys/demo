@@ -1,24 +1,19 @@
-class Post {
-  int userId;
-  int id;
-  String title;
-  String body;
+class Photo {
+  final int albumId;
+  final int id;
+  final String title;
+  final String url;
+  final String thumbnailUrl;
 
-  Post({this.userId, this.id, this.title, this.body});
+  Photo({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
 
-  Post.fromJson(Map<String, dynamic> json) {
-    userId = json['userId'];
-    id = json['id'];
-    title = json['title'];
-    body = json['body'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['userId'] = this.userId;
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['body'] = this.body;
-    return data;
+  factory Photo.fromJson(Map<String, dynamic> json) {
+    return Photo(
+      albumId: json['albumId'] as int,
+      id: json['id'] as int,
+      title: json['title'] as String,
+      url: json['url'] as String,
+      thumbnailUrl: json['thumbnailUrl'] as String,
+    );
   }
 }
