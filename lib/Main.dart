@@ -6,7 +6,6 @@ import 'package:flutter_demo_app/ui/App.dart';
 
 import 'bloc/BlocObserver.dart';
 
-
 void main() {
   EquatableConfig.stringify = kDebugMode;
   Bloc.observer = MBlocObserver();
